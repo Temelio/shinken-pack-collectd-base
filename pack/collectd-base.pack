@@ -1,0 +1,71 @@
+{
+    "name": "collectd-base",
+    "description": "Checks to manage our minimal collectd checks",
+    "path": "collectd-base",
+    "macros": {
+        "_COLLECTD_CONNTRACK_PERCENT_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for conntrack used percentage value"
+        },
+        "_COLLECTD_CONNTRACK_PERCENT_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for conntrack used percentage value"
+        },
+        "_COLLECTD_AGGREGATION_CPU_IDLE_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for cpu idle average aggregation value"
+        },
+        "_COLLECTD_AGGREGATION_CPU_IDLE_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for cpu idle average aggregation value"
+        },
+        "_COLLECTD_MEMORY_FREE_PERCENT_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for memory free percentage value"
+        },
+        "_COLLECTD_MEMORY_FREE_PERCENT_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for memory free percentage value"
+        },
+        "_COLLECTD_MEMORY_USED_PERCENT_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for memory used percentage value"
+        },
+        "_COLLECTD_MEMORY_USED_PERCENT_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for memory used percentage value"
+        },
+        "_COLLECTD_PROCESSES_STOPPED_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for number of stopped processes value"
+        },
+        "_COLLECTD_PROCESSES_STOPPED_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for number of stopped processes value"
+        },
+        "_COLLECTD_PROCESSES_ZOMBIES_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for number of zombies processes value"
+        },
+        "_COLLECTD_PROCESSES_ZOMBIES_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for number of zombies processes value"
+        },
+        "_COLLECTD_UPTIME_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for uptime value"
+        },
+        "_COLLECTD_UPTIME_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for uptime value"
+        },
+        "_COLLECTD_USERS_WARN": {
+            "type": "integer",
+            "description": "Warning threshold for number of connected users value"
+        },
+        "_COLLECTD_USERS_CRIT": {
+            "type": "integer",
+            "description": "Critical threshold for number of connected users value"
+        },
+    }
+}
