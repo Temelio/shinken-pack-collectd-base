@@ -19,14 +19,6 @@
             "type": "integer",
             "description": "Critical threshold for cpu idle average aggregation value"
         },
-        "_COLLECTD_LOAD_WARN": {
-            "type": "integer",
-            "description": "Warning threshold for load values"
-        },
-        "_COLLECTD_LOAD_CRIT": {
-            "type": "integer",
-            "description": "Critical threshold for load values"
-        },
         "_COLLECTD_MEMORY_FREE_PERCENT_WARN": {
             "type": "integer",
             "description": "Warning threshold for memory free percentage value"
