@@ -38,10 +38,11 @@ All other services will be managed by sub packs.
 
 #### System/perfs
 
-| Service name         | Description                                           | Value specification              | DS       | Consolidation | Warning variable                          | Critical variable                         | Duplicate_foreach variable |
-|----------------------|-------------------------------------------------------|----------------------------------|----------|---------------|-------------------------------------------|-------------------------------------------|----------------------------|
-| CPU idle aggregation | Check average cpu-idle for all cpu (need aggregation) | aggregation-cpu-average/cpu-idle | value    | none          | $_HOSTCOLLECTD_AGGREGATION_CPU_IDLE_WARN$ | $_HOSTCOLLECTD_AGGREGATION_CPU_IDLE_CRIT$ | N/A                        |
-| $KEY$                | Check load value foreach term                         | load/load                        | $VALUE1$ | none          | $VALUE2$                                  | $VALUE3$                                  |  _load                     |
+| Service name                 | Description                                               | Value specification                  | DS       | Consolidation | Warning variable                                  | Critical variable                                 | Duplicate_foreach variable |
+|------------------------------|-----------------------------------------------------------|--------------------------------------|----------|---------------|---------------------------------------------------|---------------------------------------------------|----------------------------|
+| CPU idle aggregation         | Check average cpu-idle for all cpu (need aggregation)     | aggregation-cpu-average/cpu-idle     | value    | none          | $_HOSTCOLLECTD_AGGREGATION_CPU_IDLE_WARN$         | $_HOSTCOLLECTD_AGGREGATION_CPU_IDLE_CRIT$         | N/A                        |
+| CPU percent idle aggregation | Check average percent-idle for all cpu (need aggregation) | aggregation-cpu-average/percent-idle | value    | none          | $_HOSTCOLLECTD_AGGREGATION_CPU_PERCENT_IDLE_WARN$ | $_HOSTCOLLECTD_AGGREGATION_CPU_PERCENT_IDLE_CRIT$ | N/A                        |
+| $KEY$                        | Check load value foreach term                             | load/load                            | $VALUE1$ | none          | $VALUE2$                                          | $VALUE3$                                          |  _load                     |
 
 #### System/partitions
 
@@ -64,24 +65,26 @@ All other services will be managed by sub packs.
 
 ## Default values
 
-    _COLLECTD_CONNTRACK_PERCENT_WARN        75
-    _COLLECTD_CONNTRACK_PERCENT_CRIT        90
-    _COLLECTD_AGGREGATION_CPU_IDLE_WARN     35:
-    _COLLECTD_AGGREGATION_CPU_IDLE_CRIT     20:
-    _COLLECTD_MEMORY_FREE_PERCENT_WARN      10
-    _COLLECTD_MEMORY_FREE_PERCENT_CRIT      15
-    _COLLECTD_MEMORY_USED_PERCENT_WARN      75
-    _COLLECTD_MEMORY_USED_PERCENT_CRIT      90
-    _COLLECTD_PROCESSES_STOPPED_WARN        5
-    _COLLECTD_PROCESSES_STOPPED_CRIT        10
-    _COLLECTD_PROCESSES_ZOMBIES_WARN        1
-    _COLLECTD_PROCESSES_ZOMBIES_CRIT        5
-    _COLLECTD_UPTIME_WARN                   600:
-    _COLLECTD_UPTIME_CRIT                   300:
-    _COLLECTD_USERS_WARN                    2
-    _COLLECTD_USERS_CRIT                    4
+    _COLLECTD_CONNTRACK_PERCENT_WARN                    75
+    _COLLECTD_CONNTRACK_PERCENT_CRIT                    90
+    _COLLECTD_AGGREGATION_CPU_IDLE_WARN                 35:
+    _COLLECTD_AGGREGATION_CPU_IDLE_CRIT                 20:
+    _HOSTCOLLECTD_AGGREGATION_CPU_PERCENT_IDLE_WARN     35:
+    _HOSTCOLLECTD_AGGREGATION_CPU_PERCENT_IDLE_CRIT     20:
+    _COLLECTD_MEMORY_FREE_PERCENT_WARN                  10
+    _COLLECTD_MEMORY_FREE_PERCENT_CRIT                  15
+    _COLLECTD_MEMORY_USED_PERCENT_WARN                  75
+    _COLLECTD_MEMORY_USED_PERCENT_CRIT                  90
+    _COLLECTD_PROCESSES_STOPPED_WARN                    5
+    _COLLECTD_PROCESSES_STOPPED_CRIT                    10
+    _COLLECTD_PROCESSES_ZOMBIES_WARN                    1
+    _COLLECTD_PROCESSES_ZOMBIES_CRIT                    5
+    _COLLECTD_UPTIME_WARN                               600:
+    _COLLECTD_UPTIME_CRIT                               300:
+    _COLLECTD_USERS_WARN                                2
+    _COLLECTD_USERS_CRIT                                4
 
-    _interfaces                             Eth0 $(netlink-eth0)$$(1)$$(1)$,Eth1 $(netlink-eth1)$$(1)$$(1)$
-    _load                                   Load 1m $(shortterm)$$(8)$$(16)$,Load 5m $(midterm)$$(6)$$(12)$,Load 15m $(longterm)$$(4)$$(8)$
-    _partitions                             / $(df-root)$$(20:)$$(10:)$$(20:)$$(10:)$
-    _processes                              Cron $(cron)$$(1:)$$(1:)$,SSHd $(sshd)$$(1:)$$(1:)$,NTPd $(ntpd)$$(1:1)$$(1:1)$,Collectd $(collectd)$$(1:1)$$(1:1)$
+    _interfaces     Eth0 $(netlink-eth0)$$(1)$$(1)$,Eth1 $(netlink-eth1)$$(1)$$(1)$
+    _load           Load 1m $(shortterm)$$(8)$$(16)$,Load 5m $(midterm)$$(6)$$(12)$,Load 15m $(longterm)$$(4)$$(8)$
+    _partitions     / $(df-root)$$(20:)$$(10:)$$(20:)$$(10:)$
+    _processes      Cron $(cron)$$(1:)$$(1:)$,SSHd $(sshd)$$(1:)$$(1:)$,NTPd $(ntpd)$$(1:1)$$(1:1)$,Collectd $(collectd)$$(1:1)$$(1:1)$
