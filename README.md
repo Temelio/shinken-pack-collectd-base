@@ -17,6 +17,9 @@ All other services will be managed by sub packs.
 #### Host templates
 
 * collectd-base: Manage all default thresholds and values for services
+* collectd-cpu-jitter: Manage CPU check with jitter values (CPU idle
+* collectd-cpu-percent: Manage CPU check with percent values (CPU percent idle
+aggregation service)
 
 #### Service templates
 
